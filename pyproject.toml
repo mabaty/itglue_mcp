@@ -1,0 +1,20 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "itglue-mcp"
+version = "0.1.0"
+description = "MCP server for IT Glue — read and write organizations, configurations, documents, and flexible assets"
+requires-python = ">=3.11"
+dependencies = [
+    "fastmcp>=2.0",
+    "httpx>=0.27",
+    "pydantic>=2.0",
+]
+
+[project.scripts]
+itglue-mcp = "itglue_mcp.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/itglue_mcp"]
